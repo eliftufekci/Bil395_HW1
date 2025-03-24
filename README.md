@@ -52,3 +52,56 @@ calculator.y dosyası:
 
 hata yönetimi:
     Geçersiz girdi durumunda "Invalid expression" mesajını görüntüler ve flag değişkenini ayarlar. Bu, sonraki hesaplamaların yapılmasını engeller.
+
+Test Cases:
+    Temel Aritmetik İfadeler:   
+    Girdi: 3 + 5
+        Beklenen Çıktı: result = 8
+    Girdi: 10 * 4
+        Beklenen Çıktı: result = 40
+    Girdi: 10 - 2
+        Beklenen Çıktı: result = 8
+    Girdi: 20 / 5
+        Beklenen Çıktı: result = 4
+
+    Parantezli İfadeler:
+        Girdi: (1 + 2) * 4
+            Beklenen Çıktı: result = 12
+        Girdi: (10 - 5) / 2
+            Beklenen Çıktı: result = 2
+        Girdi: (2 + 3) * (4 - 1)
+            Beklenen Çıktı: result = 15
+
+    Karmaşık İfadeler:
+        Girdi: (3 + 5) * (2 - 1) / 4
+            Beklenen Çıktı: result = 2
+        Girdi: 10 + (2 * 3) - 5 / 2
+            Beklenen Çıktı: result = 14
+        Girdi: 2 ^ 3 + 1
+            Beklenen Çıktı: result = 9
+        Girdi: (2.5 + 3.5) * 2.0
+            Beklenen Çıktı: result = 12.000000
+
+    Sıfıra Bölme:
+        Girdi: 10 / 0
+            Beklenen Çıktı: Invalid expression
+
+    Geçersiz Girişler:
+        Girdi: abc + 10
+            Beklenen Çıktı: Invalid expression
+        Girdi: 10 +
+            Beklenen Çıktı: Invalid expression
+        Girdi: (1 + 2 * 3
+            Beklenen Çıktı: Invalid expression
+
+    Kayan Noktalı ve Tam Sayı Karışımı:
+        Girdi: 2.5 + 3.0
+            Beklenen Çıktı: result = 5.500000
+        Girdi: 2.0 * 3.5
+            Beklenen Çıktı: result = 7.000000
+
+    Üs alma
+        Girdi: 2 ^ 3 ^ 2
+            Beklenen Çıktı: result = 64
+        Girdi: (2 ^ 3) ^ 2
+            Beklenen Çıktı: result = 64
