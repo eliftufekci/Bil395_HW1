@@ -1,16 +1,21 @@
 %{
     #include <stdio.h>
+    #include <stdlib.h>
     #include "y.tab.h"
-    extern int yylval;
+    extern YYSTYPE yylval;
 %}
+
+integer  [0-9]+
+reel   ([0-9]*\.[0-9]+)
 
 %%
 
-[0-9]+ {
-            yylval = atoi(yytext);
-            return NUMBER; // number token i döner
-       }
+{integer} { yylval.integer = atoi(yytext);
+            return INTEGER; }
 
+{reel}    { yylval.reel = atof(yytext); 
+            return DOUBLE; }
+\^  { return EXPO;   }
 \+  { return PLUS;   }
 \-  { return MINUS;  }
 \*  { return TIMES;  }
