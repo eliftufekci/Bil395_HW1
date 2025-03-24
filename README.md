@@ -7,5 +7,5 @@ calculator.l dosyası:
 
     gelen inputu PLUS MINUS vb ödev dosyasında yazan tokenlara ayırıyorum.
 
-    ayrıca [ \t] ifadesi ile boşluk değerlerinni görmezden geliyorum.
+    ayrıca [\t ] ifadesi ile boşluk yada tab değerlerini görmezden geliyorum.
 

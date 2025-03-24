@@ -6,8 +6,6 @@
 
 %%
 
-[ \t]; // boşluk yada tab gelirse görmezden gel
-
 [0-9]+ {
             yylval = atoi(yytext);
             return NUMBER; // number token i döner
@@ -20,6 +18,7 @@
 \(  { return LPAREN; } 
 \)  { return RPAREN; }
 
+[\t ] ; // boşluk yada tab gelirse görmezden gel
 
 [\n] return 0; // enter karakteri gelirse de işlemi bitirsin
 

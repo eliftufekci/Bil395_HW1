@@ -21,15 +21,20 @@
 
 %%
 ArithmeticExpression: expr{
-            printf("\nresult = %d\n", $$);
+            if(flag == 0){
+                printf("\nresult = %d\n", $$);
+            }
             return 0;
 };
 
 expr : expr PLUS expr     { $$ = $1 + $3; }
      | expr MINUS expr    { $$ = $1 - $3; }
      | expr TIMES expr    { $$ = $1 * $3; }
-     | expr DIVIDE expr   { $$ = $1 / $3; }
-     | LPAREN expr RPAREN { $$ = $1; }
+     | expr DIVIDE expr   { 
+                            if($3 != 0) $$ = $1 / $3;
+                            else  yyerror(); 
+                          }
+     | LPAREN expr RPAREN { $$ = $2; }
      | NUMBER             { $$ = $1; }
      ;
 
