@@ -1,3 +1,4 @@
+Elif TÜFEKCİ 221101004
 # Bil395_HW1
 
 Bonus olan floating point ve üs alma (3^5 gibi) işlemlerini ekledim
